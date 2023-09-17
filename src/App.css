@@ -1,25 +1,170 @@
-.app {
-  height: 100vh;
-  width: 100vw;
-  transition: background-color 1s ease-in;
-}
-
-.app__header,
-.app__main {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
+body{
+  width: auto;
+  margin: 0px;
+  padding: 0px;
   font-family: "Raleway", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
 }
 
-/*  Search bar */
 
-/* Current weather */
-
-div {
-  border: 5px solid red;
+.app,
+header, 
+button {
+  transition: background-color 1s ease;
 }
+
+.app{
+  margin: 0;
+  height: 100vh;
+}
+
+.app[data-weather-state="Rain"] {
+  background-color: #a7bdcd;
+}
+
+.app[data-weather-state="Clear"] {
+  background-color: #028cf6;
+}
+
+.app[data-weather-state="Clouds"] {
+  background-color: #9ccef4;
+}
+
+header{
+  height: 110px;
+}
+
+header[data-weather-state="Rain"] {
+  background-color: #657da2;
+}
+
+header[data-weather-state="Clear"] {
+  background-color: #1566df;
+}
+
+header[data-weather-state="Clouds"] {
+  background-color: #759eda;
+}
+
+input{
+  background-color: transparent;
+  border: none;
+  margin-top:40px ;
+  margin-left: 10px;
+  color: white;
+  width:300px;
+  height: 30px;
+  font-size: large;
+} 
+
+#search::placeholder{
+text-align:start ;
+color: white;
+font-size:x-large;
+}
+
+input:hover, input:focus, input:focus-visible{
+  border: none;
+}
+
+button{
+font-size: larger;
+border: 0;
+margin-left: 100px;
+width: 12%;
+height: 50px;
+}
+
+button[data-weather-state="Rain"] {
+  background-color: #445e9e;
+}
+
+button[data-weather-state="Clear"] {
+  background-color: #073ec1;
+}
+
+button[data-weather-state="Clouds"] {
+  background-color: #5879c7;
+}
+
+.content{   
+  margin-top: 20px;
+  text-align:  center;
+  height: 500px;  
+}   
+
+.t1{
+  margin-top: 0px;
+  margin-bottom: 30px;
+}
+
+.t3{
+  font-size:  small;
+}
+
+.mainImage {
+  height: 50%;
+  width: 50%;
+}
+
+.t1{
+  color: white;
+}
+
+.info{ 
+  display: flex;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.imageboxes{
+  text-align: center;
+  width: 10%;
+  margin: 2%;
+} 
+
+.infoImages{
+  height: 100px;
+  width: 60%;
+}
+
+
+
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+
+  .app, header {
+    height: auto;
+    padding: 10px;
+    text-align: center;
+  }
+
+  input {
+    width: 80%;
+    margin-top: 10px;
+  }
+
+  button {
+    width: 60%;
+    margin: 10px auto;
+  }
+
+  .info {
+    flex-direction: column;
+  }
+
+  .imageboxes {
+    width: 80%;
+    margin: 2% auto;
+  }
+
+  .infoImages {
+    height: 70px;
+    width: 50%;
+  }
+}
+
+
+
